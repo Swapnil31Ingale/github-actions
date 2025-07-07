@@ -1,8 +1,9 @@
 name: Testing first file
 
 on:
-  push:
-    branches: [ main ]
+
+  issues:
+    types: [ opened, edited, closed ]
 
 jobs:
   FirstJob:
@@ -15,7 +16,7 @@ jobs:
     
     steps:
       - name: This is first step
-        run: echo "Hello, world!" 
+        run: echo "Hello, world! This is first step" 
     
   SecondJob:
     needs: FirstJob
