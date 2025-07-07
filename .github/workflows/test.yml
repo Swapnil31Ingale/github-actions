@@ -1,0 +1,29 @@
+name: Testing first file
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  FirstJob:
+    name: This is first job
+    runs-on: ubuntu-latest
+        
+    defaults:
+      run:
+        shell: bash
+    
+    steps:
+      - name: This is first step
+        run: echo "Hello, world!" 
+    
+  SecondJob:
+    needs: FirstJob
+    name: This is second job
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+        - name: This is second step
+          run: echo "This is second step"
