@@ -1,0 +1,42 @@
+name: App
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  python_job:
+    name: This is test python job
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app/
+
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    env:
+      MODE: "dev"
+
+    steps:
+      - name: This is checkout step
+        uses: actions/checkout@v3
+        
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          pyton-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ../requirements.txt
+
+      - name: App testing
+        run: python ./main_test.py
+      
+      
+      
+     
