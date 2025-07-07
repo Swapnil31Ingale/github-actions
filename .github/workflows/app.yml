@@ -18,7 +18,7 @@ jobs:
         python-version: [3.8]
 
     env:
-      MODE: ${{ secret.MODE }}
+      MODE: ${{ secrets.MODE }}
 
     steps:
       - name: This is checkout step
