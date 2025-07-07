@@ -18,4 +18,5 @@ def get_mode():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
     
-#Comment
+#Comment: This is a simple Flask application that reverses a string and returns it.
+# It also has an endpoint to get the mode from environment variables.
