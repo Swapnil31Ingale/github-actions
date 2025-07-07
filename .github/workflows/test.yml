@@ -1,7 +1,6 @@
 name: Testing first file
 
 on:
-
   issues:
     types: [ opened, edited, closed ]
 
@@ -9,11 +8,9 @@ jobs:
   FirstJob:
     name: This is first job
     runs-on: ubuntu-latest
-        
     defaults:
       run:
         shell: bash
-    
     steps:
       - name: This is first step
         run: echo "Hello, world! This is first step" 
